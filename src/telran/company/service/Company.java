@@ -50,6 +50,7 @@ public class Company {
         return java.util.Arrays.copyOf(tmpEmployees, indTmp);
     }
 
+
     public telran.company.dto.Employee[] getEmployeesByDepartment(String department) {
         telran.company.dto.Employee[] tmpEmployees = new telran.company.dto.Employee[employees.length];
         int indTmp = 0;
