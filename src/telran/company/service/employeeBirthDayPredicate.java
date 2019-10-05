@@ -8,7 +8,7 @@ public class employeeBirthDayPredicate implements java.util.function.Predicate<t
     }
 
     @Override
-    public boolean test(telran.company.dto.Employee employee) {
-        return false;
+    public boolean test(telran.company.dto.Employee t) {
+        return t.getEmployeeBirthDay() != java.time.LocalDate.MIN;
     }
 }
