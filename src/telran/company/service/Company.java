@@ -38,6 +38,8 @@ public class Company {
         return false;
     }
 
+    // Old functions with no external predicate
+/*
     public telran.company.dto.Employee[] getEmployeesBySalary(int salaryFrom, int salaryTo) {
         telran.company.dto.Employee[] tmpEmployees = new telran.company.dto.Employee[employees.length];
         int indTmp = 0;
@@ -50,7 +52,6 @@ public class Company {
         return java.util.Arrays.copyOf(tmpEmployees, indTmp);
     }
 
-
     public telran.company.dto.Employee[] getEmployeesByDepartment(String department) {
         telran.company.dto.Employee[] tmpEmployees = new telran.company.dto.Employee[employees.length];
         int indTmp = 0;
@@ -61,10 +62,37 @@ public class Company {
         }
         return java.util.Arrays.copyOf(tmpEmployees, indTmp);
     }
+    */
+
 
     public telran.company.dto.Employee[] getEmployeesByTitle(String title) {
         return getEmployeesByPredicate
                 (new PredicateTitle(title));
+    }
+
+    public telran.company.dto.Employee[] getEmployeesBySalary(int salary) {
+        return getEmployeesByPredicate
+                (new SalaryRangePredicate(salary));
+    }
+
+    public telran.company.dto.Employee[] getEmployeesByDepartment(String department) {
+        return getEmployeesByPredicate
+                (new DepartmentPredicate(department));
+    }
+
+    public telran.company.dto.Employee[] getEmployeesByGender(String gender) {
+        return getEmployeesByPredicate
+                (new GenderPredicate(gender));
+    }
+
+    public telran.company.dto.Employee[] getEmployeesByEmployeeBirthday(java.time.LocalDate employeeBirthDay) {
+        return getEmployeesByPredicate
+                (new employeeBirthDayPredicate(employeeBirthDay));
+    }
+
+    public telran.company.dto.Employee[] getEmployeesByEmployeeStartJob(java.time.LocalDate employeeStartJob) {
+        return getEmployeesByPredicate
+                (new employeeStartJobPredicate(employeeStartJob));
     }
 
     private telran.company.dto.Employee[] getEmployeesByPredicate
