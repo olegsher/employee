@@ -26,13 +26,13 @@ class EmployeeTests {
 	private static final String NAME3 = "Moshe";
 	private static final long ID_NEW = 100000;
 	Employee empl1=new Employee(ID1, SALARY1, DEPARTMENT1,
-			TITLE1, NAME1);
+            TITLE1, NAME1, java.time.LocalDate.now(), java.time.LocalDate.now(), "male");
 	Employee empl2=new Employee(ID1, SALARY1, DEPARTMENT1,
-			TITLE1, NAME1);
+            TITLE1, NAME1, java.time.LocalDate.now(), java.time.LocalDate.now(), "male");
 	Employee empl3=new Employee
-			(ID2, SALARY2, DEPARTMENT2, TITLE2, NAME2);
+            (ID2, SALARY2, DEPARTMENT2, TITLE2, NAME2, java.time.LocalDate.now(), java.time.LocalDate.now(), "male");
 	Employee empl4=new Employee
-			(ID3, SALARY3, DEPARTMENT3, TITLE3, NAME3);
+            (ID3, SALARY3, DEPARTMENT3, TITLE3, NAME3, java.time.LocalDate.now(), java.time.LocalDate.now(), "male");
 	Company comp=null;
 	@BeforeEach
 	void createCompany() {
@@ -83,7 +83,7 @@ class EmployeeTests {
 		assertFalse(comp.hire(empl2));
 		assertTrue(comp.hire
 				(new Employee(ID_NEW, SALARY1,
-						DEPARTMENT1, TITLE1, NAME1)));
+                        DEPARTMENT1, TITLE1, NAME1, java.time.LocalDate.now(), java.time.LocalDate.now(), "male")));
 	}
 	@Test
 	void testGetEmployee() {
