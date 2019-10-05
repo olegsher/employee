@@ -17,7 +17,8 @@ public class Employee {
 
     public Employee(long id, int salary,
                     String department, String title,
-                    String name) {
+                    String name, LocalDate employeeBirthDay,
+                    LocalDate employeeStartJob, String gender) {
 
         this.id = id;
         this.salary = salary;
