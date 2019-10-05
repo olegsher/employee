@@ -41,9 +41,9 @@ class EmployeeTests {
 		comp.hire(empl3);
 		comp.hire(empl4);
 	}
-	
 
-	@Test
+
+    @Test
 	void testConstructor() {
 		assertEquals(empl1, empl2);
 	}

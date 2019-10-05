@@ -4,16 +4,16 @@ import java.time.LocalDate;
 
 
 public class Employee {
-    long id;
-    int salary;
-    String department;
-    String title;
-    String name;
-
-    String gender;
+    private final long id;
     // LocalDate from class java.time.Localdate
-    LocalDate employeeBirthDay;
-    LocalDate employeeStartJob;
+    @SuppressWarnings("SpellCheckingInspection")
+    private final LocalDate employeeBirthDay;
+    private final LocalDate employeeStartJob;
+    private int salary;
+    private String department;
+    private String title;
+    private String name;
+    private String gender;
 
     public Employee(long id, int salary,
                     String department, String title,
@@ -45,18 +45,22 @@ public class Employee {
         return employeeBirthDay;
     }
 
-    //Setters for employee Birthday and startJob
+    /*Setters for employee Birthday and startJob - can'' be changed
     public void setEmployeeBirthDay(java.time.LocalDate employeeBirthDay) {
         this.employeeBirthDay = employeeBirthDay;
     }
 
+     */
+
     public java.time.LocalDate getEmployeeStartJob() {
         return employeeStartJob;
     }
-
+/* Cant be changed
     public void setEmployeeStartJob(java.time.LocalDate employeeStartJob) {
         this.employeeStartJob = employeeStartJob;
     }
+
+ */
 
     public int getSalary() {
         return salary;
