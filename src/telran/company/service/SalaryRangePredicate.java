@@ -9,7 +9,7 @@ public class SalaryRangePredicate implements java.util.function.Predicate<telran
 
     @Override
     public boolean test(telran.company.dto.Employee t) {
-
-        return false;
+        //Not range yet only if the employee.salary less than salary
+        return t.getSalary() < salary;
     }
-}
+    }
